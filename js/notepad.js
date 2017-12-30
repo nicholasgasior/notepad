@@ -65,6 +65,10 @@ var notepad = (function() {
       $(document.body).append(modal);
       var pos = $('lay_center').pos();
       $('notepad').style('width', pos.w+'px').style('height', pos.h+'px');
+      $('notepad').val(localStorage.getItem('nmls_notepad'));
+      $('notepad').on('change', function() {
+        localStorage.setItem('nmls_notepad', this.value);
+      });
    };
 
     return {
